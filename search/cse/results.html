@@ -166,14 +166,14 @@
                             align-items: center;
                         }
                     </style>
-                    
-                    <form style="position:absolute;text-align: center;top:7px" class="search-form" method="get" action="#">
+                    <img src="https://cdn.yeahgames.net/img/branding/logos/default/logo.png" height="35px" width="35px">&#160;
+                    <form style="position:absolute;left:55px;top:7px" class="search-form" method="get" action="#">
                         <div class="search-form__input-wrap">
-                            <input type="text" id="searchTerm" name="s" class="search-form__input" onkeypress="handleKeyPress(event)" placeholder="Search..." value="">
+                            <input type="text" id="searchTermMobile" name="s" class="search-form__input" onkeypress="handleKeyPress(event)" placeholder="Search..." value="">
                         </div>
                         <div class="search-form__submit-wrap">
                             <button type="submit" style="background-color:#ff4747" class="search-form__submit btn btn-primary" onclick=""><i class="fa fa-caret-down"></i>‎ </button>&#160;&#160;
-                            <button type="submit" style="background-color:#ff4747" class="search-form__submit btn btn-primary" onclick="search()">Search</button>&#160;&#160;        &#160;&#160;
+                            <button type="submit" style="background-color:#ff4747" class="search-form__submit btn btn-primary" onclick="searchMobile()">Search</button>&#160;&#160;        &#160;&#160;
                     
                         </div>
                     </form>
@@ -304,6 +304,8 @@ divElement.style.display = "none";</script>
 <!-- Login modal -->
 <div class="modal fade login-modal" id="login-modal" tabindex="-1" role="dialog"
      aria-labelledby="login-modal-label">
+     <div id="divId"><div class="gcse-searchbox" id="my-search-bar"></div></div>
+
     <div class="modal-dialog" role="document">
         <div class="modal-content login-signup-form">
             <div class="modal-header">
@@ -424,7 +426,6 @@ divElement.style.display = "none";</script>
                 <li><a href="https://twitter.com/yEAhGames_" title="yEAh Games' official Twitter account." target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
                 <li><a href="//instagram.com/_yEAhGames" title="yEAh Games' official Instagram account." target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
 
-                <div id="divId"><div class="gcse-searchbox" id="my-search-bar"></div></div>
 
             </ul>
             <a href="#atbs-offcanvas-primary" class="atbs-offcanvas-close js-atbs-offcanvas-close"
@@ -520,6 +521,22 @@ divElement.style.display = "none";</script>
     function search() {
       const searchTerm = document.getElementById("searchTerm").value;
       const url = `#gsc.q=${searchTerm}`;
+      window.parent.location = url;
+    }
+
+    function handleKeyPress(event) {
+      if (event.keyCode === 13) {
+        
+        event.preventDefault();
+        search();
+      }
+    }
+  </script>
+
+<script>
+    function searchMobile() {
+      const searchTerm = document.getElementById("searchTermMobile").value;
+      const url = `#gsc.q=${searchTermMobile}`;
       window.parent.location = url;
     }
 
