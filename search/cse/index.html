@@ -2,7 +2,7 @@
 ---
 <!DOCTYPE html>
 <html lang="en-US">
-  <title>GitHub | Search / yEAh Network</title>
+  <title>CSE | Search / yEAh Network</title>
 {% include head.html %}
 
   
@@ -28,7 +28,7 @@
          </div>
                 </form>
                 <br>
-                <p style="margin: auto; width:100%!important"      >Powered by:&#160; <a title="GitHub Code Search" href="https://github.com/search" style="text-decoration:none;"><i class="fa-brands fa-github"></i>&#160;GitHub CS</a></p>     
+                <p style="margin: auto; width:100%!important"      >Powered by:&#160; <a title="Google Custom Search Engine (Programmable Search Engine)" href="https://cse.gogole.com" style="text-decoration:none;"><i class="fa-brands fa-google"></i>&#160;Google CSE</a></p>     
               </div>
             </div>
         </div>
@@ -44,7 +44,7 @@
     <script>
       function search() {
         const searchTerm = document.getElementById("searchTerm").value;
-        const url = `https://github.com/search?q=repo%3Ayeah-games+repo%3Ayeahgames2+repo%3Ayeahgames+${searchTerm.replace(/\s/g, "+")}`;
+        const url = `/search/cse/results#gsc.q=${searchTerm}`;
         window.parent.location = url;
       }
 
