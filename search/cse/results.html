@@ -1,5 +1,5 @@
 <head>
-    
+    <title>CSE | Search / yEAh Network</title>
     <!-- Basic -->
     <meta charset="UTF-8">
     <meta name="keywords" content="yEAh Network homepage, yEAh Games, yEAh, Games, yEAh-Games, yEAh Network, yEAh Games Network, YG Network, yeahgames.net, yeahgames, yeahgames pro, yeahgames.pro, yeah games net, yeahgames net, yeahgamespro, yeahgamesnet, yeahgames.net, yeah games, yeahgames network, yeahgames net, yg, the yeah games network"/>
@@ -148,9 +148,35 @@
                 <div class="header-branding header-branding--mobile mobile-header__section text-left">
                     <div class="header-logo header-logo--mobile flexbox__item text-left">
                         <a href="//yeahgames.net">
-                            <img src="https://cdn.yeahgames.net/img/branding/logos/text/red.png" alt="logo">
                         </a>
                     </div>
+                    <style>
+                        .search-form {
+                            display: flex;
+                            align-items: center;
+                        }
+                        
+                        .search-form__input-wrap {
+                            flex: 1;
+                            margin-right: 10px;
+                        }
+                        
+                        .search-form__submit-wrap {
+                            display: flex;
+                            align-items: center;
+                        }
+                    </style>
+                    
+                    <form style="position:absolute;text-align: center;top:7px" class="search-form" method="get" action="#">
+                        <div class="search-form__input-wrap">
+                            <input type="text" id="searchTerm" name="s" class="search-form__input" onkeypress="handleKeyPress(event)" placeholder="Search..." value="">
+                        </div>
+                        <div class="search-form__submit-wrap">
+                            <button type="submit" style="background-color:#ff4747" class="search-form__submit btn btn-primary" onclick=""><i class="fa fa-caret-down"></i>‎ </button>&#160;&#160;
+                            <button type="submit" style="background-color:#ff4747" class="search-form__submit btn btn-primary" onclick="search()">Search</button>&#160;&#160;        &#160;&#160;
+                    
+                        </div>
+                    </form>
                 </div>
                 
                 <div class="mobile-header__section text-right inverse-text">
