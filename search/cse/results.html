@@ -169,7 +169,7 @@
                     <img src="https://cdn.yeahgames.net/img/branding/logos/default/logo.png" height="35px" width="35px">&#160;
                     <form style="position:absolute;left:55px;top:7px" class="search-form" method="get" action="#">
                         <div class="search-form__input-wrap">
-                            <input type="text" id="searchTermMobile" name="s" class="search-form__input" onkeypress="handleKeyPress(event)" placeholder="Search..." value="">
+                            <input type="text" id="searchTermMobile" name="s" class="search-form__input" onkeypress="handleKeyPressMobile(event)" placeholder="Search..." value="">
                         </div>
                         <div class="search-form__submit-wrap">
                             <button type="submit" style="background-color:#ff4747" class="search-form__submit btn btn-primary" onclick=""><i class="fa fa-caret-down"></i>‎ </button>&#160;&#160;
@@ -540,7 +540,7 @@ divElement.style.display = "none";</script>
       window.parent.location = url;
     }
 
-    function handleKeyPress(event) {
+    function handleKeyPressMobile(event) {
       if (event.keyCode === 13) {
         
         event.preventDefault();
