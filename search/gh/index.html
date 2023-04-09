@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+{% include head.html %}
+
+  
+{% include top.html %}
+    <div class="site-content">
+        <div class="atbs-block atbs-block--fullwidth atbs-section-module-404">
+            <div class="atbs-block__inner text-center">
+              <br><br><br>
+                
+
+
+              <h5 style="font-size:55px!important;" class="page-404-heading-number"><a href="https://www.yeahgames.net"><img src="https://cdn.yeahgames.net/img/branding/logos/text/red.png" width="275px"></a></h5><br>
+              <h4 style="font-size:28px" class="page-404-heading-title f-46 f-w-700"><a href="https://search.yeahgames.net" style="text-decoration: none;">NETWORK SEARCH</a></h4>
+              <p class="page-404-description f-18 f-w-400">ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</a></p>
+                 
+                  <form class="search-form" method="get" action="#">
+                    <div class="search-form__input-wrap">
+                        <input type="text" id="searchTerm" name="s" class="search-form__input" onkeypress="handleKeyPress(event)" placeholder="Search..." value="">
+                    </div>
+                    <div class="search-form__submit-wrap">
+                        <button type="submit" style="background-color:#ff4747"  class="search-form__submit btn btn-primary" onclick="search()">Search</button>&#160;&#160;<button style="background-color:#ff4747" class="search-form__submit btn btn-primary" onclick=""><i class="fa-solid fa-caret-down"></i></button>
+                        <br>
+         </div>
+                </form>
+                <br>
+                <p style="margin: auto; width:100%!important"      >Powered by:&#160; <a href="https://github.com/search" style="text-decoration:none;"><i class="fa-brands fa-github"></i>&#160;GitHub CS</a></p>     
+              </div>
+            </div>
+        </div>
+    </div><!-- .site-content -->
+   
+
+
+    
+
+    {% include bottom.html %}
+
+
+    <script>
+      function search() {
+        const searchTerm = document.getElementById("searchTerm").value;
+        const url = `https://github.com/search?q=repo%3Ayeah-games+repo%3Ayeahgames2+repo%3Ayeahgames+${searchTerm.replace(/\s/g, "+")}`;
+        window.parent.location = url;
+      }
+
+      function handleKeyPress(event) {
+        if (event.keyCode === 13) {
+          // 13 is the key code for Enter
+          event.preventDefault();
+          search();
+        }
+      }
+    </script>
+
