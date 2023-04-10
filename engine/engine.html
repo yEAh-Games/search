@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Engine</title>
+  </head>
+  <body>
+    <input type="text" id="search-input" placeholder="Search...">
+    <button id="search-button">Search</button>
+
+    <div id="results-container"></div>
+
+    <script>
+      // Define the data variable that will store the search results
+      var data = [];
+
+      // Define the sources for the search (in this case, sitemap.xml and data.json files)
+      var sources = [
+        'https://library.yeahgames.net/sitemap.xml',
+        'https://www.example.com/data.json',
+        'https://www.another-example.com/sitemap.xml',
+        'https://www.another-example.com/data.json'
+      ];
+
+      // Define the function to fetch the data from the sources
+      function fetchData(url) {
+        return fetch(url)
+          .then(response => response.text())
+          .then(data => {
+            // Parse the sitemap.xml or data.json file and add the results to the data variable
+            // ...
+          })
+          .catch(error => console.log(error));
+      }
+
+      // Define the search function
+      function search(query) {
+        // Clear the previous search results
+        document.getElementById('results-container').innerHTML = '';
+
+        // Filter the data based on the search query
+        var filteredData = data.filter(item => {
+          // Check if the title or content of the item contains the search query
+          if (item.title.toLowerCase().includes(query.toLowerCase()) || item.content.toLowerCase().includes(query.toLowerCase())) {
+            return true;
+          }
+          return false;
+        });
+
+        // Display the search results
+        if (filteredData.length > 0) {
+          filteredData.forEach(item => {
+            var result = document.createElement('div');
+            result.innerHTML = '<a href="' + item.url + '">' + item.title + '</a><p>' + item.content + '</p>';
+            document.getElementById('results-container').appendChild(result);
+          });
+        } else {
+          var noResults = document.createElement('div');
+          noResults.innerHTML = 'No results found.';
+          document.getElementById('results-container').appendChild(noResults);
+        }
+      }
+
+      // Define the event listener for the search button
+      document.getElementById('search-button').addEventListener('click', function() {
+        var query = document.getElementById('search-input').value;
+        search(query);
+      });
+
+      // Fetch the data from the sources and add it to the data variable
+      Promise.all(sources.map(fetchData)).then(results => {
+        data = results.flat();
+      });
+    </script>
+  </body>
+</html>
