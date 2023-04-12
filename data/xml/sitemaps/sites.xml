@@ -321,3 +321,19 @@
         <priority>1</priority>
     </url>
 </urlset>
+<url>
+    <loc>https://dump.yeahgames.net</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+<url>
+    <loc>https://cloud.yeahgames.net</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+<url>
+    <loc>https://1.dump.cloud.yeahgames.net</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+</url>
+</urlset>
