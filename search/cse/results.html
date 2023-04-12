@@ -626,15 +626,3 @@
         }
     }
 </script>
-
-<script>
-const searchResults = document.querySelectorAll('.gsc-webResult');
-
-searchResults.forEach(result => {
-  const isPromoted = result.classList.contains('gsc-adBlock');
-
-  if (isPromoted) {
-    result.remove();
-  }
-});
-</script>
