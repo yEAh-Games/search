@@ -1,0 +1,41 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* Set the iframe element to cover the entire screen */
+        iframe {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Adjust the size of the iframe element based on screen size */
+        @media screen and (max-width: 768px) {
+            iframe {
+                height: 500px;
+            }
+        }
+
+        /* Adjust the position of the iframe element based on screen size */
+        @media screen and (max-width: 480px) {
+            iframe {
+                position: absolute;
+            }
+        }
+    </style>
+</head>
+
+
+<!-- Replace 'YOUR_IFRAME_ID' with the ID of your iframe -->
+<iframe width="100%" height="100%" allowfullscreen id="YOUR_IFRAME_ID" src="https://t.unigon.net/testsearch"></iframe>
+
+<script>
+    // Get the value of the hash from the parent URL
+    var hash = window.location.hash.substring(1);
+
+    // Update the src attribute of the iframe
+    var iframe = document.getElementById('YOUR_IFRAME_ID');
+    iframe.src = iframe.src + '#' + hash;
+</script>
