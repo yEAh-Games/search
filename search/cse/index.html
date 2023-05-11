@@ -43,7 +43,7 @@
 <script>
   function search() {
     const searchTerm = document.getElementById("searchTerm").value;
-    const url = `/search/cse/embed#gsc.q=${searchTerm}`;
+    const url = `/search/cse/results#gsc.q=${searchTerm}`;
     window.parent.location = url;
   }
 
